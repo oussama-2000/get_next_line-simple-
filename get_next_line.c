@@ -6,7 +6,7 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 23:55:41 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 02:03:52 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 14:56:12 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	update_buffer(char **buffer)
 	int		j;
 
 	i = 0;
+	if(*buffer == NULL)
+		return ;
 	while ((*buffer)[i] && (*buffer)[i] != '\n')
 		i++;
 	if (!(*buffer)[i])
@@ -33,9 +35,7 @@ void	update_buffer(char **buffer)
 	i++;
 	j = 0;
 	while ((*buffer)[i])
-	{
 		new_buffer[j++] = (*buffer)[i++];
-	}
 	new_buffer[j] = '\0';
 	free(*buffer);
 	*buffer = new_buffer;

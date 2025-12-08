@@ -6,11 +6,11 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 15:47:23 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 02:07:29 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 13:34:05 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 int	len(char *str)
 {
@@ -82,7 +82,7 @@ char	*join(char *s1, char *s2)
 	j = 0;
 	if (!s1)
 		s1 = ft_strdup("");
-	result = malloc(-1);
+	result = malloc(len(s1) + len(s2) + 1);
 	if (!result)
 		return (free(s1), NULL);
 	while (s1[i] != '\0')

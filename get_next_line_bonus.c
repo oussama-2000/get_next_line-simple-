@@ -6,11 +6,11 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 23:55:41 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 02:08:39 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 14:37:45 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 void	update_buffer(char **buffer)
 {
@@ -19,6 +19,8 @@ void	update_buffer(char **buffer)
 	int		j;
 
 	i = 0;
+	if(*buffer == NULL)
+		return ;
 	while ((*buffer)[i] && (*buffer)[i] != '\n')
 		i++;
 	if (!(*buffer)[i])
@@ -33,9 +35,7 @@ void	update_buffer(char **buffer)
 	i++;
 	j = 0;
 	while ((*buffer)[i])
-	{
 		new_buffer[j++] = (*buffer)[i++];
-	}
 	new_buffer[j] = '\0';
 	free(*buffer);
 	*buffer = new_buffer;
@@ -75,16 +75,16 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			state;
 
-	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd >= 1024 || BUFFER_SIZE <= 0)
 	{
 		return (NULL);
 	}
-	state = ft_while(fd, &buffer);
+	state = ft_while(fd, &buffer[fd]);
 	if (state == -1)
 	{
 		return (NULL);
 	}
-	line = extract_line(buffer);
-	update_buffer(&buffer);
+	line = extract_line(buffer[fd]);
+	update_buffer(&buffer[fd]);
 	return (line);
 }

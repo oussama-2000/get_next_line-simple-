@@ -1,17 +1,22 @@
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 int main()
 {
     int fd = open("file.txt", O_RDONLY);
-    // char *result = get_next_line(fd);
-    // printf("%s",result);
-    // result = get_next_line(fd);
-    // printf("%s", result);
-    // result = get_next_line(fd);
-    // printf("%s", result);
+    int fd2 = open("file2.txt", O_RDONLY);
+
+
     char *result;
-    while((result =  get_next_line(fd)))
+    int i = 0;
+    while((result =  get_next_line(0)))
     {
-        printf("%s",result);
+        printf("[%d] %s",i ,result);
         free(result);
+        i++;
     }
+    // while((result =  get_next_line(fd)))
+    // {
+    //     printf("%s",result);
+    //     free(result);
+    // }
+    
 }
