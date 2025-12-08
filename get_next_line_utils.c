@@ -6,7 +6,7 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 15:47:23 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 13:16:29 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 23:24:19 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*join(char *s1, char *s2)
 		s1 = ft_strdup("");
 	result = malloc(len(s1) + len(s2) + 1);
 	if (!result)
-		return (free(s1), NULL);
+		return(free(s1), NULL);
 	while (s1[i] != '\0')
 	{
 		result[i] = s1[i];
@@ -123,8 +123,8 @@ char	*extract_line(char *buffer)
 	}
 	if (buffer[i] == '\n')
 	{
-		line[i] = '\n';
+		line[i++] = '\n';
 	}
-	line[i + 1] = '\0';
+	line[i] = '\0';
 	return (line);
 }

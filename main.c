@@ -1,22 +1,26 @@
-#include "get_next_line_bonus.h"
+#include "get_next_line.h"
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
+
+void f()
+{
+    system("leaks a.out");
+}
 int main()
 {
-    int fd = open("file.txt", O_RDONLY);
-    int fd2 = open("file2.txt", O_RDONLY);
+    atexit(f);
+    int fd_i = open("file.txt", O_RDONLY);
+    int fd_o = open("output.txt", O_RDWR);
 
 
     char *result;
-    int i = 0;
-    while((result =  get_next_line(0)))
-    {
-        printf("[%d] %s",i ,result);
-        free(result);
-        i++;
-    }
-    // while((result =  get_next_line(fd)))
-    // {
-    //     printf("%s",result);
-    //     free(result);
-    // }
     
+    while((result =  get_next_line(fd_i)))
+    {
+        write(fd_o,result,len(result));
+        // printf("%s", result);
+        free(result);
+    }
+
 }

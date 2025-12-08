@@ -6,7 +6,7 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 23:55:41 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 14:37:45 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 23:18:48 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ int	ft_while(int fd, char **buffer)
 {
 	char	*str_read;
 	int		bytes;
-
+	
+	bytes = 0;
 	while (!search(*buffer, '\n'))
 	{
 		str_read = malloc(BUFFER_SIZE + 1);
@@ -75,7 +76,7 @@ char	*get_next_line(int fd)
 	char		*line;
 	int			state;
 
-	if (fd < 0 || fd >= 1024 || BUFFER_SIZE <= 0)
+	if (fd < 0 || fd > 1024 || BUFFER_SIZE <= 0)
 	{
 		return (NULL);
 	}

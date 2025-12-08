@@ -6,7 +6,7 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 15:47:23 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 13:34:05 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 22:56:51 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,8 +123,8 @@ char	*extract_line(char *buffer)
 	}
 	if (buffer[i] == '\n')
 	{
-		line[i] = '\n';
+		line[i++] = '\n';
 	}
-	line[i + 1] = '\0';
+	line[i] = '\0';
 	return (line);
 }

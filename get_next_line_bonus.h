@@ -6,21 +6,19 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 13:32:54 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 14:29:14 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/08 23:26:12 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 7777777
-#endif
 
 #ifndef GET_NEX_LINE_H
 # define GET_NEX_LINE_H
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <fcntl.h>
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 42
+#endif
 
 int	len(char *str);
 int	search(char *str, char c);
