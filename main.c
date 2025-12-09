@@ -9,18 +9,27 @@ void f()
 }
 int main()
 {
-    atexit(f);
+    // atexit(f);
     int fd_i = open("file.txt", O_RDONLY);
-    int fd_o = open("output.txt", O_RDWR);
+    int fd_i2 = open("file2.txt", O_RDONLY);
+    // int fd_o = open("output.txt", O_RDWR);
 
 
     char *result;
     
-    while((result =  get_next_line(fd_i)))
+    while((result =  get_next_line(fd_i2)))
     {
-        write(fd_o,result,len(result));
-        // printf("%s", result);
+        // write(fd_o,result,len(result));
+        printf("%s", result);
         free(result);
     }
+    // result = get_next_line(fd_i);
+    // printf("%s",result);
+    // result = get_next_line(fd_i2);
+    // printf("%s",result);
+    // result = get_next_line(fd_i);
+    // printf("%s",result);
+    // result = get_next_line(fd_i2);
+    // printf("%s",result);
 
 }

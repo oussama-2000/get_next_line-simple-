@@ -6,32 +6,32 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 23:55:41 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 22:58:47 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/09 18:08:41 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void update_buffer(char **buffer)
+void	update_buffer(char **buffer)
 {
-	char *new_buffer;
-	int i;
-	int j;
+	char	*new_buffer;
+	int		i;
+	int		j;
 
 	i = 0;
 	if (*buffer == NULL)
-		return;
+		return ;
 	while ((*buffer)[i] && (*buffer)[i] != '\n')
 		i++;
 	if (!(*buffer)[i])
 	{
 		free(*buffer);
 		*buffer = NULL;
-		return;
+		return ;
 	}
 	new_buffer = malloc(len(*buffer) - i + 1);
 	if (!new_buffer)
-		return;
+		return ;
 	i++;
 	j = 0;
 	while ((*buffer)[i])
@@ -41,15 +41,15 @@ void update_buffer(char **buffer)
 	*buffer = new_buffer;
 }
 
-int ft_while(int fd, char **buffer)
+int	ft_while(int fd, char **buffer)
 {
-	char *str_read;
-	int bytes;
-	
+	char	*str_read;
+	int		bytes;
+
 	bytes = 0;
 	while (!search(*buffer, '\n'))
 	{
-		str_read = malloc(BUFFER_SIZE + 1);
+		str_read = malloc((size_t)BUFFER_SIZE + 1);
 		if (!str_read)
 			return (-1);
 		bytes = read(fd, str_read, BUFFER_SIZE);
@@ -70,11 +70,11 @@ int ft_while(int fd, char **buffer)
 	return (1);
 }
 
-char *get_next_line(int fd)
+char	*get_next_line(int fd)
 {
-	static char *buffer;
-	char *line;
-	int state;
+	static char	*buffer;
+	char		*line;
+	int			state;
 
 	state = 0;
 	if (fd < 0 || BUFFER_SIZE <= 0)

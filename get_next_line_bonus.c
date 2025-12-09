@@ -6,7 +6,7 @@
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/07 23:55:41 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 23:18:48 by oamkhou          ###   ########.fr       */
+/*   Updated: 2025/12/09 18:14:13 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	update_buffer(char **buffer)
 	int		j;
 
 	i = 0;
-	if(*buffer == NULL)
+	if (*buffer == NULL)
 		return ;
 	while ((*buffer)[i] && (*buffer)[i] != '\n')
 		i++;
@@ -45,11 +45,11 @@ int	ft_while(int fd, char **buffer)
 {
 	char	*str_read;
 	int		bytes;
-	
+
 	bytes = 0;
 	while (!search(*buffer, '\n'))
 	{
-		str_read = malloc(BUFFER_SIZE + 1);
+		str_read = malloc((size_t)BUFFER_SIZE + 1);
 		if (!str_read)
 			return (-1);
 		bytes = read(fd, str_read, BUFFER_SIZE);

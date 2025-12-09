@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: oamkhou <oamkhou@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/07 15:47:23 by oamkhou           #+#    #+#             */
-/*   Updated: 2025/12/08 23:24:19 by oamkhou          ###   ########.fr       */
+/*   Created: 2025/12/09 18:09:07 by oamkhou           #+#    #+#             */
+/*   Updated: 2025/12/09 18:10:16 by oamkhou          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ char	*join(char *s1, char *s2)
 		s1 = ft_strdup("");
 	result = malloc(len(s1) + len(s2) + 1);
 	if (!result)
-		return(free(s1), NULL);
+		return (free(s1), NULL);
 	while (s1[i] != '\0')
 	{
 		result[i] = s1[i];
