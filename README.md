@@ -17,12 +17,8 @@ Instructions:
     Execution :
 
         ./a.out
+
     
-Resources :
-    Official Documentation : man 2 read 
-    system calls : https://youtu.be/lhToWeuWWfw?si=xoLZOR5sgp0M9eqI
-    statice variables : https://youtu.be/g4Dn2cwSrC4?si=QSzJbVYJ3ohjv_vA
-    and AI for searching
 
 Algorithm Used:
 
