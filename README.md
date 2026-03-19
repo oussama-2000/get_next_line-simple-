@@ -1,3 +1,5 @@
+<img src="https://i.ytimg.com/vi/xgDSXNOHTIA/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLC3l4aHPAoWvnAcwXZIERdb0PpbWg" width="100%" />
+
 This project has been created as part of the 42 curriculum by oamkhou.
 
 Description:
